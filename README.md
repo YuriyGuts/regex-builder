@@ -98,3 +98,7 @@ by calling the corresponding methods of `RegexBuilder`.
 RegexBuilder uses MSTest for unit testing. To run or add unit tests in Visual Studio, please see the `YuriyGuts.RegexBuilder.Tests` project.
 
 The `YuriyGuts.RegexBuilder.TestApp` project is a console application that can be used as a temporary testing workbench.
+
+## License
+
+The source code is licensed under [The MIT License](http://opensource.org/licenses/MIT).
