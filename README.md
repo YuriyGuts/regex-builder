@@ -82,6 +82,13 @@ The following elements are supported:
 * [Alternation constructs](http://msdn.microsoft.com/en-us/library/az24scfc.aspx#alternation_constructs)
 * [Inline options and comments](http://msdn.microsoft.com/en-us/library/az24scfc.aspx#miscellaneous_constructs)
 
+## How to Integrate RegexBuilder
+
+Add a reference to YuriyGuts.RegexBuilder.dll in your project manually, or use NuGet Package Manager:
+```
+PM> Install-Package RegexBuilder 
+```
+
 ## Usage Guide
 
 There are 3 classes you'll need. They all expose their functionality via static members and work statelessly.
