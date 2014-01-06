@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("RegexBuilder")]
-[assembly: AssemblyDescription("RegexBuilder library")]
+[assembly: AssemblyDescription(".NET library for human-readable declaration of regular expressions without having to remember the regex syntax.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Yuriy Guts")]
 [assembly: AssemblyProduct("RegexBuilder")]
