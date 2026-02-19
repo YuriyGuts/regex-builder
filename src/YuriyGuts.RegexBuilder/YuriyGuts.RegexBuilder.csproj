@@ -1,72 +1,18 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{A8F68F40-BDBD-4C68-A91A-A11B25682846}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YuriyGuts.RegexBuilder</RootNamespace>
-    <AssemblyName>YuriyGuts.RegexBuilder</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageVersion>1.0.1</PackageVersion>
+    <PackageReleaseNotes>Support .netstandard 2.0</PackageReleaseNotes>
+    <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\~BuildOutput\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>..\~BuildOutput\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <RunCodeAnalysis>true</RunCodeAnalysis>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="HelperClasses\ExtensionMethods.cs" />
-    <Compile Include="HelperClasses\RegexStringEscaper.cs" />
-    <Compile Include="RegexBuilder.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RegexNode.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeBacktrackingSuppression.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeComment.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeConcatenation.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeConditionalMatch.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeAlternation.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeCharacterRange.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeCharacterSet.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeEscapingLiteral.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeGroup.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeGroupReference.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeInlineOption.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeLiteral.cs" />
-    <Compile Include="RegexNodeTypes\RegexNodeLookAround.cs" />
-    <Compile Include="RegexQuantifier.cs" />
-    <Compile Include="HelperClasses\RegexMetaChars.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>echo F|xcopy /y "$(TargetPath)" "$(TargetDir)..\..\NuGetPackage\lib\net40\$(TargetFileName)"</PostBuildEvent>
-  </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
