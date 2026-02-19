@@ -30,7 +30,7 @@ namespace YuriyGuts.RegexBuilder
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("value", "LookAroundExpression cannot be null");
+                    throw new ArgumentNullException(nameof(value), "LookAroundExpression cannot be null");
                 }
                 lookAroundExpression = value;
             }
@@ -43,7 +43,7 @@ namespace YuriyGuts.RegexBuilder
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("value", "MatchExpression cannot be null");
+                    throw new ArgumentNullException(nameof(value), "MatchExpression cannot be null");
                 }
                 matchExpression = value;
             }

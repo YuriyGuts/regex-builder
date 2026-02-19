@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 
 namespace YuriyGuts.RegexBuilder.Tests
 {
-    internal class Program
+    internal sealed class Program
     {
         public static void Main()
         {

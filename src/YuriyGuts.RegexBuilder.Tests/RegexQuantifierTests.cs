@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace YuriyGuts.RegexBuilder.Tests
@@ -9,17 +9,7 @@ namespace YuriyGuts.RegexBuilder.Tests
     [TestClass]
     public class RegexQuantifierTests
     {
-        private TestContext testContextInstance;
-
-        /// <summary>
-        ///Gets or sets the test context which provides
-        ///information about and functionality for the current test run.
-        ///</summary>
-        public TestContext TestContext
-        {
-            get { return testContextInstance; }
-            set { testContextInstance = value; }
-        }
+        public TestContext TestContext { get; set; }
 
         [TestMethod]
         public void TestNonePropertyShouldReturnNull()
@@ -146,48 +136,42 @@ namespace YuriyGuts.RegexBuilder.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestMinOccurrenceCountPropertyShouldNotAcceptNulls1()
         {
-            RegexQuantifier.Custom(null, 2, true);
+            Assert.ThrowsExactly<ArgumentException>(() => RegexQuantifier.Custom(null, 2, true));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestMinOccurrenceCountPropertyShouldNotAcceptNulls2()
         {
             RegexQuantifier quantifier = RegexQuantifier.Custom(1, 2, true);
-            quantifier.MinOccurrenceCount = null;
+            Assert.ThrowsExactly<ArgumentException>(() => quantifier.MinOccurrenceCount = null);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestMinMaxOccurrenceCountPropertiesShouldNotAcceptNegativeInts1()
         {
-            RegexQuantifier.Custom(-1, 5, true);
+            Assert.ThrowsExactly<ArgumentException>(() => RegexQuantifier.Custom(-1, 5, true));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestMinMaxOccurrenceCountPropertiesShouldNotAcceptNegativeInts2()
         {
-            RegexQuantifier.Custom(0, -1, true);
+            Assert.ThrowsExactly<ArgumentException>(() => RegexQuantifier.Custom(0, -1, true));
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestMinMaxOccurrenceCountPropertiesShouldNotAcceptNegativeInts3()
         {
             RegexQuantifier quantifier = RegexQuantifier.Custom(1, 2, true);
-            quantifier.MinOccurrenceCount = -1;
+            Assert.ThrowsExactly<ArgumentException>(() => quantifier.MinOccurrenceCount = -1);
         }
 
         [TestMethod]
-        [ExpectedException(typeof(ArgumentException))]
         public void TestMinMaxOccurrenceCountPropertiesShouldNotAcceptNegativeInts4()
         {
             RegexQuantifier quantifier = RegexQuantifier.Custom(1, 2, true);
-            quantifier.MaxOccurrenceCount = -1;
+            Assert.ThrowsExactly<ArgumentException>(() => quantifier.MaxOccurrenceCount = -1);
         }
     }
 }

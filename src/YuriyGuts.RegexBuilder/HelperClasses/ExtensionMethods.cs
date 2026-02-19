@@ -9,7 +9,7 @@ namespace YuriyGuts.RegexBuilder
         {
             if (builder == null)
             {
-                throw new ArgumentNullException("builder");
+                throw new ArgumentNullException(nameof(builder));
             }
 
             if (oldValues == null || newValues == null)

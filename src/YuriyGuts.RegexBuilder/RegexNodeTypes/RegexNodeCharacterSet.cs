@@ -33,7 +33,7 @@ namespace YuriyGuts.RegexBuilder
         {
             if (characters == null)
             {
-                throw new ArgumentNullException("characters", "Character array cannot be null");
+                throw new ArgumentNullException(nameof(characters), "Character array cannot be null");
             }
             this.characters = characters;
             characterListExpression = RegexStringEscaper.Escape(new string(characters), false);
@@ -50,7 +50,7 @@ namespace YuriyGuts.RegexBuilder
         {
             if (value == null)
             {
-                throw new ArgumentNullException("value", "CharacterListExpression cannot be null");
+                throw new ArgumentNullException(nameof(value), "CharacterListExpression cannot be null");
             }
             characterListExpression = RegexStringEscaper.Escape(value, false);
             characters = characterListExpression.ToCharArray();

@@ -32,13 +32,13 @@ namespace YuriyGuts.RegexBuilder
         {
             if (expressions == null)
             {
-                throw new ArgumentNullException("expressions", "Expression list cannot be null.");
+                throw new ArgumentNullException(nameof(expressions), "Expression list cannot be null.");
             }
             for (int i = 0; i < expressions.Length; i++)
             {
                 if (expressions[i] == null)
                 {
-                    throw new ArgumentNullException("expressions", "All alternating expressions must be not null.");
+                    throw new ArgumentNullException(nameof(expressions), "All alternating expressions must be not null.");
                 }
             }
             this.expressions = expressions;
@@ -61,10 +61,10 @@ namespace YuriyGuts.RegexBuilder
                     resultBuilder.Append(expressions[i].ToRegexPattern());
                     if (i < expressions.Length - 1)
                     {
-                        resultBuilder.Append("|");
+                        resultBuilder.Append('|');
                     }
                 }
-                resultBuilder.Append(")");
+                resultBuilder.Append(')');
                 result = resultBuilder.ToString();
             }
 

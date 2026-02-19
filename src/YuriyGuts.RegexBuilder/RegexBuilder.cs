@@ -17,7 +17,7 @@ namespace YuriyGuts.RegexBuilder
         {
             if (rootNode == null)
             {
-                throw new ArgumentNullException("rootNode");
+                throw new ArgumentNullException(nameof(rootNode));
             }
             return new Regex(rootNode.ToRegexPattern());
         }
@@ -32,7 +32,7 @@ namespace YuriyGuts.RegexBuilder
         {
             if (rootNode == null)
             {
-                throw new ArgumentNullException("rootNode");
+                throw new ArgumentNullException(nameof(rootNode));
             }
             return new Regex(rootNode.ToRegexPattern(), regexOptions);
         }

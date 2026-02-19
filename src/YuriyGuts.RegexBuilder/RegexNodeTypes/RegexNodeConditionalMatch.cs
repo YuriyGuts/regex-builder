@@ -23,7 +23,7 @@ namespace YuriyGuts.RegexBuilder
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("value", "TrueMatchExpression cannot be null");
+                    throw new ArgumentNullException(nameof(value), "TrueMatchExpression cannot be null");
                 }
                 trueMatchExpression = value;
             }
@@ -36,7 +36,7 @@ namespace YuriyGuts.RegexBuilder
             {
                 if (value == null)
                 {
-                    throw new ArgumentNullException("value", "FalseMatchExpression cannot be null");
+                    throw new ArgumentNullException(nameof(value), "FalseMatchExpression cannot be null");
                 }
                 falseMatchExpression = value;
             }

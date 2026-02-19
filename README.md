@@ -27,6 +27,7 @@ When it might be useful:
 ## Compatibility
 
 The library targets `netstandard2.0`, so it works with .NET Framework 4.6.1+, .NET Core 2.0+, and .NET 5+.
+Tests are verified against .NET 8 and .NET 10 LTS.
 
 ## Example
 
@@ -122,10 +123,10 @@ Build the solution:
 dotnet build src/YuriyGuts.RegexBuilder.sln
 ```
 
-Run the tests:
+Run the tests (runs on both `net8.0` and `net10.0`):
 
 ```shell
-dotnet test src/YuriyGuts.RegexBuilder.Tests
+dotnet test --project src/YuriyGuts.RegexBuilder.Tests
 ```
 
 Run the console test app:

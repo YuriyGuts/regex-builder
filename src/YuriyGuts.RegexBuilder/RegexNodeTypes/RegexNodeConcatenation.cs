@@ -28,7 +28,7 @@ namespace YuriyGuts.RegexBuilder
         {
             if (childNodes == null)
             {
-                throw new ArgumentNullException("childNodes", "Child node collection cannot be null.");
+                throw new ArgumentNullException(nameof(childNodes), "Child node collection cannot be null.");
             }
             this.childNodes = childNodes;
         }
