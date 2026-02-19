@@ -25,7 +25,6 @@ namespace YuriyGuts.RegexBuilder.Tests
 
             MatchAndPrintResults(helloWorldRegex, "Hello world!");
             MatchAndPrintResults(helloWorldRegex, "Hello universe!");
-            Console.ReadKey(true);
         }
 
         private static void MatchAndPrintResults(Regex regex, string input)

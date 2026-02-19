@@ -1,18 +1,35 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageVersion>1.0.1</PackageVersion>
-    <PackageReleaseNotes>Support .netstandard 2.0</PackageReleaseNotes>
     <TargetFramework>netstandard2.0</TargetFramework>
+
+    <!-- NuGet package metadata -->
+    <PackageId>RegexBuilder</PackageId>
+    <Version>1.0.1</Version>
+    <Authors>Yuriy Guts</Authors>
+    <Description>.NET library for human-readable declaration of regular expressions without having to remember the regex syntax. Looks similar to Expression Trees in .NET.</Description>
+    <Copyright>Copyright (c) 2011-2026 Yuriy Guts</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/YuriyGuts/regex-builder</PackageProjectUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageTags>regex regular-expression fluent declarative builder readable pattern</PackageTags>
+    <PackageReleaseNotes>Support netstandard2.0</PackageReleaseNotes>
+    <RepositoryUrl>https://github.com/YuriyGuts/regex-builder</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+
+    <!-- SourceLink and deterministic builds -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\~BuildOutput\Debug\</OutputPath>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\~BuildOutput\Release\</OutputPath>
-    <RunCodeAnalysis>true</RunCodeAnalysis>
-    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0" PrivateAssets="All" />
+  </ItemGroup>
 </Project>
